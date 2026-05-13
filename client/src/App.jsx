@@ -77,18 +77,18 @@ function App() {
         <h1>Add User</h1>
         <input
           placeholder="Name"
+          value={newUser.name || ""}
           onChange={(e) =>
             setNewUser((prev) => ({ ...prev, name: e.target.value }))
           }
-          value={newUser.name || ""}
         />
         <input
           placeholder="Age"
           type="number"
+          value={newUser.age || ""}
           onChange={(e) =>
             setNewUser((prev) => ({ ...prev, age: e.target.value }))
           }
-          value={newUser.age || ""}
         />
         <button onClick={handleCreateUser}>Create User</button>
       </div>
@@ -98,7 +98,7 @@ function App() {
         <p>{getUserByIdData?.getUserById?.age}</p>
       </div>
       <div>
-        <h1>Users</h1>
+        <h1>All Users</h1>
         {getUsersData?.getUsers?.map((user) => (
           <div key={user.id}>
             <p>Name: {user.name}</p>
